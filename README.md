@@ -25,7 +25,7 @@ This project helped me practice:
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5** for structure  
 - **CSS3** for styling  
@@ -33,7 +33,7 @@ This project helped me practice:
 
 ---
 
-## 📁 How to Run
+## How to Run
 
 1. Clone the repository:
    ```bash
