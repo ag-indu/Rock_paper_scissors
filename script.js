@@ -58,3 +58,19 @@ function announceWinner(user){
      document.querySelector('.score').innerHTML = `Wins: ${score.win}, Losses: ${score.losses}, Ties: ${score.tie}`;
      
 }
+let interval;
+
+function autoPlay(){
+    let button = document.querySelector('.autoplay-button');
+    if(button.innerText==='Auto Play'){
+        button.innerHTML = 'Stop Play';
+        interval = setInterval(function(){
+            const user = computerMove();
+            announceWinner(user);
+        },1000)
+    }
+    else{
+        clearInterval(interval);
+        button.innerHTML = 'Auto Play';
+    }
+}

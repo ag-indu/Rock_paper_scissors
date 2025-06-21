@@ -48,3 +48,11 @@ button img{
 p{
     font-size: 25px;
 }
+
+.autoplay-button{
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    width :150px;
+    height: 100px;
+}

@@ -34,6 +34,10 @@
         localStorage.removeItem('score')
         document.querySelector('.score').innerHTML = `Wins: ${score.win}, Losses: ${score.losses}, Ties: ${score.tie}`;
     " class="reset-button">Reset score</button>
+
+    <button class="autoplay-button" onclick="
+           autoPlay();
+    "> Auto Play </button>
     
     <script src="script.js"></script>
 </body>
