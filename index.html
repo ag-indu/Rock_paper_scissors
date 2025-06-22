@@ -10,15 +10,9 @@
 <body>
     <h1>Rock Paper Scissors</h1>
     <div class="options-container">
-        <button onclick=" 
-        announceWinner('rock');     
-        "><img src="images/rock-emoji.png" alt=""></button>
-        <button onclick="
-        announceWinner('paper');
-        "><img src="images/paper-emoji.png" alt=""></button>
-        <button onclick="
-        announceWinner('scissors');
-        "><img src="images/scissors-emoji.png" alt=""></button>
+        <button class="rock-button"><img src="images/rock-emoji.png" alt=""></button>
+        <button class="paper-button"><img src="images/paper-emoji.png" alt=""></button>
+        <button class="scissors-button"><img src="images/scissors-emoji.png" alt=""></button>
     </div>
     <h2 class="judgement"></h2>
     <div class="result-container">
@@ -27,17 +21,8 @@
         <p class="result3"></p>
     </div>
     <p class="score"></p>
-    <button onclick="
-        score.win=0;
-        score.losses=0;
-        score.tie=0;
-        localStorage.removeItem('score')
-        document.querySelector('.score').innerHTML = `Wins: ${score.win}, Losses: ${score.losses}, Ties: ${score.tie}`;
-    " class="reset-button">Reset score</button>
-
-    <button class="autoplay-button" onclick="
-           autoPlay();
-    "> Auto Play </button>
+    <button class="reset-button">Reset score</button>
+    <button class="autoplay-button"> Auto Play </button>
     
     <script src="script.js"></script>
 </body>

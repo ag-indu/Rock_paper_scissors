@@ -4,6 +4,24 @@ let score = JSON.parse(localStorage.getItem('score'))||{
     'tie':0
 }
 let img1,img2;
+let rockButton = document.querySelector('.rock-button');
+let paperButton = document.querySelector('.paper-button');
+let scissorsButton = document.querySelector('.scissors-button');
+let resetButton = document.querySelector('.reset-button');
+let autoPlayButton = document.querySelector('.autoplay-button');
+
+rockButton.addEventListener('click',() => announceWinner('rock'));
+paperButton.addEventListener('click',() =>announceWinner('paper'));
+scissorsButton.addEventListener('click',() => announceWinner('scissors'));
+resetButton.addEventListener('click',()=>{
+    score.win=0;
+    score.losses=0;
+    score.tie=0;
+    localStorage.removeItem('score')
+    document.querySelector('.score').innerHTML = `Wins: ${score.win}, Losses: ${score.losses}, Ties: ${score.tie}`;
+})
+autoPlayButton.addEventListener('click',autoPlay);
+
 document.querySelector('.score').innerHTML = `Wins: ${score.win}, Losses: ${score.losses}, Ties: ${score.tie}`;
 function computerMove(){
     let computer = Math.floor(Math.random()*3);
@@ -64,7 +82,7 @@ function autoPlay(){
     let button = document.querySelector('.autoplay-button');
     if(button.innerText==='Auto Play'){
         button.innerHTML = 'Stop Play';
-        interval = setInterval(function(){
+        interval = setInterval(()=>{
             const user = computerMove();
             announceWinner(user);
         },1000)
